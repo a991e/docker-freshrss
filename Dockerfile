@@ -26,14 +26,14 @@ RUN \
     sqlite && \
   echo "**** install app ****" && \
   if [ -z ${FRESHRSS_RELEASE+x} ]; then \
-    FRESHRSS_RELEASE=$(curl -sX GET "https://api.github.com/repos/FreshRSS/FreshRSS/releases/latest" \
+    FRESHRSS_RELEASE=$(curl -sX GET "https://api.github.com/repos/a991e/FreshRSS/releases/latest" \
     | awk '/tag_name/{print $4;exit}' FS='[""]'); \
   fi && \
   mkdir -p \
     /app/www && \
   curl -o \
     /tmp/freshrss.tar.gz -L \
-    "https://github.com/FreshRSS/FreshRSS/archive/${FRESHRSS_RELEASE}.tar.gz" && \
+    "https://github.com/a991e/FreshRSS/archive/${FRESHRSS_RELEASE}.tar.gz" && \
   tar xf \
     /tmp/freshrss.tar.gz -C \
     /app/www --strip-components=1 && \
